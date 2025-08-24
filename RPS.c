@@ -12,4 +12,9 @@ int main(){
     printf("*  beats paper (by cutting it); and paper beats rock (by covering it). If both players select *\n");
     printf("*                                the same one, it is a tie.                                   *\n");
     printf("***********************************************************************************************\n");
+
+    char your_choice,computer_choice;
+    printf("Enter r for rock, p for paper and s for scissor\n");
+    scanf("%c",your_choice);
+    return 0;
 }
