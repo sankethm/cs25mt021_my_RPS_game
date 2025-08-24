@@ -1,7 +1,0 @@
-HTTPS:
-
-https://github.com/sankethm/cs25mt021_my_RPS_game.git
-
-SSH:
-
-git@github.com:sankethm/cs25mt021_my_RPS_game.git
