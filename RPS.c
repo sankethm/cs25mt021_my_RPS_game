@@ -1,4 +1,7 @@
 #include<stdio.h>
+#include<math.h>
+
+
 
 int main(){
     printf("***********************************************\n");
@@ -14,7 +17,19 @@ int main(){
     printf("***********************************************************************************************\n");
 
     char your_choice,computer_choice;
+    int n;
     printf("Enter r for rock, p for paper and s for scissor\n");
     scanf("%c",your_choice);
+
+    srand(time(NULL));
+    n = rand() % 100;
+    if (n < 33)
+        computer_choice = 's';
+    else if (n > 33 && n < 66)
+        computer_choice = 'p';
+    else
+        computer_choice = 'z';
+
+
     return 0;
 }
