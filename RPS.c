@@ -1,6 +1,17 @@
 #include<stdio.h>
 #include<math.h>
-
+#include<time.h>
+int game(char you, char computer)
+{
+    if (you == computer)
+        return -1;
+    if ((you == 'r' && computer == 's') ||
+        (you == 's' && computer == 'p') ||
+        (you == 'p' && computer == 'r'))
+        return 1;
+    else
+        return 0;
+}
 
 
 int main(){
@@ -17,9 +28,9 @@ int main(){
     printf("***********************************************************************************************\n");
 
     char your_choice,computer_choice;
-    int n;
+    int n,result;
     printf("Enter r for rock, p for paper and s for scissor\n");
-    scanf("%c",your_choice);
+    scanf("%c",&your_choice);
 
     srand(time(NULL));
     n = rand() % 100;
@@ -28,7 +39,20 @@ int main(){
     else if (n > 33 && n < 66)
         computer_choice = 'p';
     else
-        computer_choice = 'z';
+        computer_choice = 'r';
+
+    result=game(your_choice,computer_choice);
+
+    if (result == -1) {
+        printf("It's Tie\n");
+    }
+    else if (result == 1) {
+        printf("You have won the game!\n");
+    }
+    else {
+        printf("Computer won the game\n");
+    }
+        printf("YOu choose : %c and Computer choose : %c\n",your_choice, computer_choice);
 
 
     return 0;
