@@ -29,24 +29,28 @@ int main(){
 
     char your_choice,computer_choice;
     int n,result;
-    printf("Enter r for rock, p for paper and s for scissor\n");
-    scanf("%c",&your_choice);
+
 
     srand(time(NULL));
-    n = rand() % 100;
-    if (n < 33)
-        computer_choice = 's';
-    else if (n > 33 && n < 66)
-        computer_choice = 'p';
-    else
-        computer_choice = 'r';
+    do{
+        printf("Enter r for rock, p for paper and s for scissor\n");
+        scanf(" %c",&your_choice);
 
-    result=game(your_choice,computer_choice);
+        n = rand() % 100;
+        if (n < 33)
+            computer_choice = 's';
+        else if (n > 33 && n < 66)
+            computer_choice = 'p';
+        else
+            computer_choice = 'r';
 
-    if (result == -1) {
-        printf("It's Tie\n");
-    }
-    else if (result == 1) {
+        result=game(your_choice,computer_choice);
+
+        if (result == -1) {
+            printf("It's Tie, Rematch........\n");
+        }
+    }while(result==-1);
+    if (result == 1) {
         printf("You have won the game!\n");
     }
     else {
